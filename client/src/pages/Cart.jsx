@@ -211,30 +211,31 @@ const Cart = () => {
   const navigate = useNavigate();
 
   const onToken = (token) => {
+    console.log("Stripe Token generate:", token);
     setStripeToken(token);
   };
 
   useEffect(() => {
-    const makeRequest = async () => {
-      if (stripeToken) {
+    console.log("Stripe token updated:", stripeToken);
+    if (stripeToken) {
+      const makeRequest = async () => {
         try {
           const res = await userRequest.post("/checkout/payment", {
             tokenId: stripeToken.id,
             amount: cart.total * 100,
           });
+          console.log("Payment successful:", res.data);
           navigate("/success", {
-            state: {
-              stripeData: res.data,
-              products: cart,
-            },
+            state: { stripeData: res.data, products: cart },
           });
         } catch (err) {
-          console.log("Payment Error:", err);
+          console.error("Payment Error:", err);
         }
-      }
-    };
-    makeRequest();
+      };
+      makeRequest();
+    }
   }, [stripeToken, cart.total, navigate]);
+  console.log("Stripe Key:", KEY);
 
   return (
     <Container>
