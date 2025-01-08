@@ -20,6 +20,10 @@ const Info = styled.div`
   justify-content: center;
   transition: all 0.5s ease;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const Container = styled.div`
@@ -36,6 +40,29 @@ const Container = styled.div`
   &:hover ${Info} {
     opacity: 1;
   }
+
+  @media (max-width: 768px) {
+    min-width: 220px;
+    height: 300px;
+  }
+
+  @media (max-width: 480px) {
+    min-width: 180px;
+    height: 250px;
+  }
+`;
+
+const Image = styled.img`
+  height: 75%;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    height: 70%;
+  }
+
+  @media (max-width: 480px) {
+    height: 60%;
+  }
 `;
 
 const Circle = styled.div`
@@ -44,11 +71,6 @@ const Circle = styled.div`
   border-radius: 50%;
   background-color: white;
   position: absolute;
-`;
-
-const Image = styled.img`
-  height: 75%;
-  z-index: 2;
 `;
 
 const Icon = styled.div`
@@ -61,9 +83,16 @@ const Icon = styled.div`
   justify-content: center;
   margin: 10px;
   transition: all 0.5s ease;
+
   &:hover {
     background-color: #e9f5f5;
     transform: scale(1.1);
+  }
+
+  @media (max-width: 480px) {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
   }
 `;
 
@@ -77,8 +106,8 @@ const Product = ({ item }) => {
           <ShoppingCartOutlined />
         </Icon>
         <Icon>
-        <Link to={`/product/${item._id}`}>
-          <SearchOutlined />
+          <Link to={`/product/${item._id}`}>
+            <SearchOutlined />
           </Link>
         </Icon>
         <Icon>

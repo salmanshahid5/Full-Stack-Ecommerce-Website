@@ -6,8 +6,19 @@ const Container = styled.div`
   display: flex;
   padding: 20px;
   justify-content: space-between;
-  flex-wrap: wrap;  /* Ensures responsiveness */
-  gap: 20px; /* Adds space between the items */
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 15px; 
+    padding: 10px;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px;
+  }
 `;
 
 const Categories = () => {

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { mobile } from "../responsive.js";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
@@ -16,17 +15,17 @@ const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
-  ${mobile`
+  @media (max-width: 768px) {
     padding: 10px;
-  `}
+  }
 `;
 
 const Title = styled.h1`
   font-weight: 300;
   text-align: center;
-  ${mobile`
+  @media (max-width: 768px) {
     font-size: 18px;
-  `}
+  }
 `;
 
 const Top = styled.div`
@@ -34,10 +33,10 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  ${mobile`
+  @media (max-width: 768px) {
     flex-direction: column;
     gap: 10px;
-  `}
+  }
 `;
 
 const TopButton = styled.button`
@@ -48,16 +47,16 @@ const TopButton = styled.button`
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
   color: ${(props) => (props.type === "filled" ? "white" : "black")};
-  ${mobile`
+  @media (max-width: 768px) {
     padding: 8px;
     font-size: 14px;
-  `}
+  }
 `;
 
 const TopTexts = styled.div`
-  ${mobile`
+  @media (max-width: 768px) {
     display: none;
-  `}
+  }
 `;
 
 const TopText = styled.span`
@@ -69,9 +68,9 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  ${mobile`
+  @media (max-width: 768px) {
     flex-direction: column;
-  `}
+  }
 `;
 
 const Info = styled.div`
@@ -82,10 +81,10 @@ const Product = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  ${mobile`
+  @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
-  `}
+  }
 `;
 
 const ProductDetail = styled.div`
@@ -95,9 +94,9 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 200px;
-  ${mobile`
+  @media (max-width: 768px) {
     width: 150px;
-  `}
+  }
 `;
 
 const Details = styled.div`
@@ -137,19 +136,19 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
-  ${mobile`
+  @media (max-width: 768px) {
     margin: 5px 15px;
     font-size: 20px;
-  `}
+  }
 `;
 
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
-  ${mobile`
+  @media (max-width: 768px) {
     font-size: 24px;
     margin-bottom: 20px;
-  `}
+  }
 `;
 
 const Hr = styled.hr`
@@ -164,17 +163,17 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 50vh;
-  ${mobile`
+  @media (max-width: 768px) {
     height: auto;
     padding: 15px;
-  `}
+  }
 `;
 
 const SummaryTitle = styled.h1`
   font-weight: 200;
-  ${mobile`
+  @media (max-width: 768px) {
     font-size: 20px;
-  `}
+  }
 `;
 
 const SummaryItem = styled.div`
@@ -183,10 +182,10 @@ const SummaryItem = styled.div`
   justify-content: space-between;
   font-weight: ${(props) => props.type === "total" && "500"};
   font-size: ${(props) => props.type === "total" && "24px"};
-  ${mobile`
+  @media (max-width: 768px) {
     margin: 20px 0px;
     font-size: ${(props) => props.type === "total" && "20px"};
-  `}
+  }
 `;
 
 const SummaryItemText = styled.span``;
@@ -199,11 +198,12 @@ const Button = styled.button`
   background-color: black;
   color: white;
   font-weight: 600;
-  ${mobile`
+  @media (max-width: 768px) {
     padding: 8px;
     font-size: 14px;
-  `}
+  }
 `;
+
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);

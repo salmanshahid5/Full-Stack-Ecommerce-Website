@@ -11,6 +11,10 @@ const Container = styled.div`
   position: relative;
   overflow: hidden; 
   background-color: #fff7f7;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div`

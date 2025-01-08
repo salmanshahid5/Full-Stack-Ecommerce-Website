@@ -7,12 +7,20 @@ const Container = styled.div`
   height: 70vh;
   position: relative;
   overflow: hidden;
-  border-radius: 10px; /* Rounded corners for a smooth look */
-  transition: transform 0.3s ease-in-out; /* Adds smooth hover transition */
-  
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+
   &:hover {
-    transform: scale(1.05); /* Scales up the category on hover */
+    transform: scale(1.05);
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    height: 50vh; /* Adjust height for smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    height: 40vh; /* Further adjust height for very small screens */
   }
 `;
 
@@ -20,10 +28,10 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s ease; /* Adds fade effect */
-  
+  transition: opacity 0.3s ease;
+
   ${Container}:hover & {
-    opacity: 0.7; /* Image fades on hover */
+    opacity: 0.7;
   }
 `;
 
@@ -37,12 +45,16 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.5); /* Darkens the background */
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: opacity 0.3s ease;
 
   ${Container}:hover & {
-    opacity: 1; /* Shows the info on hover */
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px; /* Adjust text size for smaller screens */
   }
 `;
 
@@ -51,6 +63,14 @@ const Title = styled.h1`
   margin-bottom: 20px;
   font-size: 30px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px; /* Further reduce font size */
+  }
 `;
 
 const Button = styled.button`
@@ -67,7 +87,18 @@ const Button = styled.button`
     background-color: #333;
     color: white;
   }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px; /* Adjust button size */
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 12px; /* Further adjust button size */
+    font-size: 12px;
+  }
 `;
+
 
 const CategoryItem = ({ item }) => {
   return (

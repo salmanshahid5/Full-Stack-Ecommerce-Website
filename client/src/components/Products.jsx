@@ -8,7 +8,13 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    justify-content: center; /* Center products on smaller screens */
+    padding: 10px;
+  }
 `;
+
 
 const Products = ({ cat, filters, sort }) => {
   console.log(cat, filters, sort);
