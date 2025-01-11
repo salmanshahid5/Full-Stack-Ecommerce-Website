@@ -1,4 +1,3 @@
-
 import "./Chart.css"
 import {
   LineChart,
