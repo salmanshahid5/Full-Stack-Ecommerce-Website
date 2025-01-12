@@ -3,9 +3,9 @@ import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
 import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, getProducts } from "../../redux/apiCalls";
+import { useEffect } from "react";
 
 export default function ProductList() {
   const dispatch = useDispatch();

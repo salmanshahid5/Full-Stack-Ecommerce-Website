@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { login } from "../../redux/apiCalls";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
+    try {
+      await login(dispatch, { username, password }); // Perform login
+      navigate("/"); // Redirect to home
+    } catch (err) {
+      console.error("Login failed:", err);
+    }
   };
 
   return (
@@ -34,7 +41,7 @@ const Login = () => {
         placeholder="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleClick} style={{ padding: 10, width:100 }}>
+      <button onClick={handleClick} style={{ padding: 10, width: 100 }}>
         Login
       </button>
     </div>
