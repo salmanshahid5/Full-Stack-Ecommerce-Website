@@ -1,14 +1,14 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://www.sanas.pk/cdn/shop/files/2024-2-10webresize__0006_050A0796bgedited3_1024x1024.jpg?v=1707560667",
+    img: "https://i.ibb.co/DG69bQ4/2.png",
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
   },
   {
     id: 2,
-    img: "https://i.ibb.co/DG69bQ4/2.png",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTamSO2ZXQp20YlPrO1UfNVqtElDQ_XzFPomA&s",
     title: "AUTUMN COLLECTION",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fcf1ed",

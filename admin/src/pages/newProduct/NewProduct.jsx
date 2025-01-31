@@ -1,4 +1,3 @@
-
 import "./NewProduct.css";
 
 export default function NewProduct() {
